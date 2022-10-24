@@ -1,0 +1,61 @@
+[{
+    "id": 1,
+    "nombre": "Whey Protein",
+    "precio": 14.1,
+    "foto": "/img/whey_protein.png" 
+},
+{
+    "id": 2,
+    "nombre": "Pre War",
+    "precio": 15.2,
+    "foto": "/img/pre_entrenamiento.png" 
+},
+{
+    "id": 3,
+    "nombre": "Creatina",
+    "precio": 27.5,
+    "foto": "/img/creatina.png"
+},
+{
+    "id": 4,
+    "nombre": "Protein Bar",
+    "precio": 14.3,
+    "foto": "/img/protein_bar.png"
+},
+{
+    "id": 5,
+    "nombre": "Carbo Energy",
+    "precio": 6,
+    "foto": "/img/carbo_energy.png"
+},
+{
+    "id": 6,
+    "nombre": "Colágeno Sport",
+    "precio": 18,
+    "foto": "/img/colageno_sport.png"
+},
+{
+    "id": 7,
+    "nombre": "Starter Protein",
+    "precio": 11.5,
+    "foto": "/img/starter_protein.png"
+},
+{
+    "id": 8,
+    "nombre": "Enargy Gel",
+    "precio": 3.2,
+    "foto": "/img/enargy_gel.png"
+},
+{
+    "id": 9,
+    "nombre": "Enargy Gel",
+    "precio": 6.4,
+    "foto": "/img/enargy_cafeina.png"
+},
+{
+    "id": 10,
+    "nombre": "Shaker Premium",
+    "precio": 8.5,
+    "foto": "/img/shaker_premium.png"
+}
+]

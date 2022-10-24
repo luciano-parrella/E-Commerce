@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/513718239f.js" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="../estilos/estilos.css">
+    <title>Contacto</title>
+</head>
+<body id="body">
+            <!-- Navigation-->
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="container px-4 px-lg-5">
+                    <a class="navbar-brand" href="../index.html"><img src="../img/logo_small.png" alt="Logo" width="250" height="100"></a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
+                            <li class="nav-item"><a class="nav-link" aria-current="page" href="../index.html">Inicio</a></li>
+                            <li class="nav-item"><a class="nav-link" href="productos.html">Productos</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+    <main id="main" class="bg-light">
+   
+        <div class="container pt-4 pb-5" style="width: 70%;">
+          <div class="h1 text-center py-3">Información de Contacto</div>  
+          <form class="row g-3" id="formularioContacto">
+                <div class="col-md-6">
+                  <label for="inputName" class="form-label">Nombre y Apellido</label>
+                  <input type="text" class="form-control" id="inputName" required>
+                </div>
+                <div class="col-md-6">
+                  <label for="inputEmail4" class="form-label">Email</label>
+                  <input type="email" class="form-control" id="inputEmail4" required>
+                </div>
+                <div class="col-md-6">
+                  <label for="inputPhone" class="form-label">Teléfono</label>
+                  <input type="number" class="form-control" id="inputPhone" placeholder="" required>
+                </div>
+                <div class="col-md-6">
+                  <label for="inputAddress" class="form-label">Dirección</label>
+                  <input type="text" class="form-control" id="inputAddress" placeholder="" required>
+                </div>
+                <div class="col-md-6">
+                  <label for="inputCiudad" class="form-label">Ciudad</label>
+                  <input type="text" class="form-control" id="inputCity" required>
+                </div>
+                <div class="col-md-4">
+                  <label for="inputProvincia" class="form-label">Provincia</label>
+                  <select id="inputState" class="form-select" required>
+                    <option selected value="">Seleccionar...</option>
+                    <option>Buenos Aires</option>
+                    <option>Ciudad Autónoma de Buenos Aires</option>
+                    <option>Catamarca</option>
+                    <option>Chaco</option>
+                    <option>Chubut</option>
+                    <option>Córdoba</option>
+                    <option>Corrientes</option>
+                    <option>Entre Ríos</option>
+                    <option>Formosa</option>
+                    <option>Jujuy</option>
+                    <option>La Pampa</option>
+                    <option>La Rioja</option>
+                    <option>Mendoza</option>
+                    <option>Misiones</option>
+                    <option>Neuquén</option>
+                    <option>Río Negro</option>
+                    <option>Salta</option>
+                    <option>San Juan</option>
+                    <option>San Luis</option>
+                    <option>Santa Cruz</option>
+                    <option>Santa Fé</option>
+                    <option>Santiago del Estero</option>
+                    <option>Tierra del Fuego, Antártida e Islas del Atlántico Sur</option>
+                    <option>Tucumán</option>
+                  </select>
+                </div>
+                <div class="col-md-2">
+                  <label for="inputCodigoPostal" class="form-label">Código Postal</label>
+                  <input type="text" class="form-control" id="inputZip" required>
+                </div>
+                <div class="col-12">
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="invalidCheck2" required>
+                    <label class="form-check-label" for="invalidCheck2">
+                      Acepto los términos y condiciones
+                    </label>
+                  </div>
+                </div>
+                <div class="col-12">
+                  <button id="botonFormulario" type="submit" class="btn btn-primary">Enviar</button>
+                </div>
+              </form>
+        </div>        
+
+    <footer id="footer">
+
+      <div class="container-fluid">
+        <div class="flex-center">
+            <i class="fa fa-facebook fa-lg white-text"></i>
+            <i class="fa-brands fa-instagram fa-lg white-text"></i>
+            <i class="fa-brands fa-whatsapp fa-lg white-text"><a href="https://wa.me/5491131908444"></a></i>
+            <p class="text-muted">&copy; PERFORMANCE. Todos los derechos reservados.</p>
+        </div>
+      </div>
+
+    </footer>
+    <!-- Sweet Alert -->
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <!-- Mi script -->
+    <script src="../js/contacto.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+</body>
+</html>
