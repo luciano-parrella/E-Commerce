@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { Theme } from '../../contexts/Theme';
 import './styles.css';
 
 //Card
@@ -7,16 +8,17 @@ const Item = ({product}) => {
 
   const navigate = useNavigate()
 
+  const {themeColor} = useContext(Theme);
+
   const navigateDetail = () => {
-    //Navegar hacia el detalle del producto
     navigate(`/detail/${product.id}`)
   }
 
   return (
-    <div onClick={navigateDetail} className='card-detail'>
+    <div onClick={navigateDetail} className={themeColor === "light" ? 'card-detail' : 'card-detail-dark'}>
       <img src={product.image} alt={product.name} width={300}/>
-      <h3 key={product.id}>{product.name}</h3>
-      <p>Stock: {product.stock}</p>
+      <h2 key={product.id}>{product.name}</h2>
+      <h5>${product.price}</h5>
     </div>
   )
 }

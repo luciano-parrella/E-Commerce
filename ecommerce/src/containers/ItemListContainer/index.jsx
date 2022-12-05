@@ -1,42 +1,35 @@
 import React from 'react';
 import './styles.css';
-import rawProducts from '../../data/products';
 import { useEffect, useState } from 'react';
 import ItemList from '../../components/ItemList';
 import { useParams } from 'react-router-dom';
 import { MoonLoader } from 'react-spinners';
+import { collection, query, where, getDocs } from "firebase/firestore";
+import { db } from '../../firebase/config';
 
-export default function ItemListContainer ({greeting}) {
+export default function ItemListContainer () {
 
     const [products, setProducts] = useState([])
 
     const {categoryId} = useParams()
 
-    console.log(categoryId);
-
     useEffect(()=> {
         ( async ()=> {
-
-            const obtenerProductos = () => {
-                return new Promise((resolve, reject) => {
-                    setTimeout(() => {
-                        resolve(rawProducts);
-                    }, 1000);
-                });
-            }
-
-            let response = await obtenerProductos();
-            console.log(response);
-
             try {
-                console.log(categoryId);
-                if (categoryId) {
-                    response = response.filter(product => product.category === `${categoryId}`);
-                } else {
-                    response = await obtenerProductos();
-                }
-                console.log(response);
-                setProducts(response)
+            let q;
+            if (categoryId) {
+                q = query(collection(db, "products"), where("category", "==", categoryId))
+            } else {
+                q = query(collection(db, "products"));
+            }
+            const querySnapshot = await getDocs(q);
+            const productosFirebase = [];
+            querySnapshot.forEach((doc) => {
+            // doc.data() is never undefined for query doc snapshots
+            console.log(doc.id, " => ", doc.data());
+            productosFirebase.push({...doc.data(), id: doc.id})
+            });
+            setProducts(productosFirebase);
             } catch (error) {
                 console.log(error);
             }
@@ -45,7 +38,6 @@ export default function ItemListContainer ({greeting}) {
 
     return (
          <div className = 'item-list-container'>
-            <h2>{greeting}</h2>
             {products.length ? <ItemList products={products}/> : <MoonLoader/>}
          </div>
     )

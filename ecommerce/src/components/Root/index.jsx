@@ -7,7 +7,6 @@ const Root = () => {
     <>
         <NavBar/>
         <Outlet/>
-        {/* <h2>Footer</h2> */}
     </>
   )
 }

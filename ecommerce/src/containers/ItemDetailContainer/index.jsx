@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
 import ItemDetail from "../../components/ItemDetail";
 import { useParams } from 'react-router-dom';
-import rawProducts from '../../data/products';
 import { MoonLoader } from 'react-spinners';
+import { doc, getDoc } from "firebase/firestore";
+import { db } from "../../firebase/config";
 
 const ItemDetailContainer = () => {
 
@@ -10,25 +11,18 @@ const ItemDetailContainer = () => {
 
     const [itemDetail, setItemDetail] = useState(null)
 
-    // console.log(id);
-
 useEffect(()=> {
     ( async ()=> {
-
-        const obtenerProductos = () => {
-            return new Promise((resolve, reject) => {
-                setTimeout(() => {
-                    resolve(rawProducts);
-                }, 1000);
-            });
-        }
-
-        let response = await obtenerProductos();
-        let itemDetail;
-        
         try {
-            itemDetail = response.find(product => product.id === parseInt(`${id}`));
-            setItemDetail(itemDetail)
+        const docRef = doc(db, "products", id);
+        const docSnap = await getDoc(docRef);
+        if (docSnap.exists()) {
+            console.log("Document data:", docSnap.data());
+            setItemDetail({...docSnap.data(), id: docSnap.id})
+        } else {
+        // doc.data() will be undefined in this case
+            console.log("No such document!");
+        }
         } catch (error) {
             console.log(error);
         }

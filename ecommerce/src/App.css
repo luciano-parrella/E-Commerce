@@ -3,3 +3,13 @@
   margin: 0;
   box-sizing: border-box;
 }
+
+.container-dark {
+  background-color: darkgray;
+  width: 100%;
+  overflow: scroll;
+}
+
+::webkit-scrollbar {
+  display: none;
+}
